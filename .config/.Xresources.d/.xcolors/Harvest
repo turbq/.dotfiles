@@ -1,0 +1,21 @@
+/* vim: set syntax=xdefaults: */ 
+
+URxvt.background: #131426
+URxvt.foreground: #cccccc
+URxvt.cursorColor: #cccccc
+URxvt.color0: #222222
+URxvt.color1: #335eea
+URxvt.color2: #efef5b
+URxvt.color3: #6985ea
+URxvt.color4: #0e75ed
+URxvt.color5: #efef5b
+URxvt.color6: #3197c6
+URxvt.color7: #cccccc
+URxvt.color8: #3197c6
+URxvt.color9: #349edb
+URxvt.color10: #efef5b
+URxvt.color11: #4674d6
+URxvt.color12: #0e76ed
+URxvt.color13: #efef5b
+URxvt.color14: #0e76ed
+URxvt.color15: #cccccc
