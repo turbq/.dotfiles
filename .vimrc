@@ -386,6 +386,11 @@ augroup filetype_html
     autocmd!
     autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
 augroup END
+
+augroup filetype_make
+    autocmd!
+    autocmd FileType make setlocal noexpandtab
+augroup END
 " }}}1
 
 " Abbreviation example

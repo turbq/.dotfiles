@@ -31,12 +31,15 @@ set $down k
 set $left j
 set $right semicolon
 set $mod Mod4
+set $screen_left DVI-I-1
+set $screen_mid DP-1
+set $screen_right DP-0
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return focus output DP-1, workspace --no-auto-back-and-forth $ws2, exec urxvt
+bindsym $mod+Return focus output $screen_right, workspace --no-auto-back-and-forth $ws2, exec urxvt
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+shift+Return exec urxvt -name floating
 
@@ -210,11 +213,11 @@ assign [class="Chromium"]	$ws0
 assign [class="Zathura"]	$ws7
 
 # Put workspaces on specific screens
-workspace $ws0 output DP-0
-workspace $ws1 output DVI-I-0
-workspace $ws4 output DP-1
-workspace $ws7 output DVI-I-0
-workspace $ws9 output DVI-I-0
+workspace $ws0 output $screen_mid
+workspace $ws1 output $screen_left
+workspace $ws4 output $screen_right
+workspace $ws7 output $screen_left
+workspace $ws9 output $screen_left
 
 # Workspace auto back and force
 workspace_auto_back_and_forth yes
@@ -255,8 +258,8 @@ set $white			#FFFFFF
 # finds out, if available)
 
 bar {
-	font pango:Hack, FontAwesome 11
-	output DVI-I-0
+	font pango:Hack, FontAwesome 8
+	output $screen_left
 
 	colors {
 	# Whole color settings
@@ -277,8 +280,8 @@ bar {
 }
 
 bar {
-	font pango:Hack, FontAwesome 11
-	output DP-0
+	font pango:Hack, FontAwesome 8
+	output $screen_mid
 
 	colors {
 	# Whole color settings
@@ -299,8 +302,8 @@ bar {
 }
 
 bar {
-	font pango:Hack, FontAwesome 11
-	output DP-1
+	font pango:Hack, FontAwesome 8
+	output $screen_right
 
 	colors {
 	# Whole color settings
@@ -358,7 +361,7 @@ bindsym $mod+x			move workspace to output right
 bindsym Print exec scrot -e 'mv $f ~/Documents/img/Scrots/' && sleep 1 && exec notify-send 'screenshot has been saved in ~/Documents/img/Scrots/'
 # Because the key symbol of the Print key is actually Sys_Req when when Alt is pressed:
 bindsym --release Mod1+Sys_Req exec scrot -ue 'mv $f ~/Documents/img/Scrots/' && sleep 1 && notify-send 'shot has been saved in ~/Documents/img/Scrots/'
-bindsym --release Mod1+d focus output DVI-I-0, move scratchpad
+bindsym --release Mod1+d focus output $screen_left, move scratchpad
 bindsym ctrl+shift+d scratchpad show, floating disable
 
 #####################################

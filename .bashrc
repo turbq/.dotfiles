@@ -46,6 +46,10 @@ alias less='less -r'
 alias myip="curl http://ipecho.net/plain; echo"
 # Edit i3 config
 alias ei3='vim ~/.config/i3/config'
+# cd embedded
+alias embed='cd ~/User/embedded/'
+# dotfiles config
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 #                                   Functions
 
